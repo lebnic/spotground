@@ -8,7 +8,7 @@ import { Angulartics2, Angulartics2GoogleAnalytics } from 'angulartics2';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Google analytics works!';
+  title = "Welcome, here's a map";
   
   constructor(
     public angulartics2: Angulartics2,

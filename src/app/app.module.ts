@@ -8,10 +8,12 @@ import { RouterModule } from '@angular/router'
 import { Angulartics2Module, Angulartics2GoogleAnalytics } from 'angulartics2';
 
 import { AppComponent } from './app.component';
+import { MapComponent } from './map/map.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,
