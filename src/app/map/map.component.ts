@@ -22,7 +22,7 @@ export class MapComponent implements OnInit {
 
     this.mymap.on('click', (ev) => {
       L.marker([ev.latlng.lat, ev.latlng.lng]).addTo(this.mymap)
-        .bindPopup('A pretty CSS3 popup.<br> Easily customizable.');
+        .bindPopup('<img src="/assets/spot.jpg" style="width:300px;display:inline-block;margin:5px 0 2px 5px"/>');
     });
   }
 }
