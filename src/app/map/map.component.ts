@@ -25,8 +25,6 @@ export class MapComponent implements OnInit {
         .bindPopup('<img src="/assets/spot.jpg" style="width:300px;display:inline-block;margin:5px 0 2px 5px"/>');
     });
 
-    this.mymap.locate();
-
     this.mymap.on('locationfound', (ev) => {
       this.mymap.setView(ev.latlng, 17);
       let radius = ev.accuracy / 2;
@@ -47,5 +45,9 @@ export class MapComponent implements OnInit {
     this.mymap.on('locationerror', (ev) => {
       alert(ev.message);
     });
+  }
+
+  locateMe() {
+    this.mymap.locate();
   }
 }
