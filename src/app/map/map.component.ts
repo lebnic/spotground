@@ -15,8 +15,8 @@ export class MapComponent implements OnInit {
   ngOnInit() {
     this.mymap = L.map("map", { zoomControl: false, dragging: true }).setView([46, -71], 6);
     new L.TileLayer(
-      'http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png',
-      { attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>' }
+      'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+      { attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy;' }
     ).addTo(this.mymap);
 
 
@@ -24,8 +24,6 @@ export class MapComponent implements OnInit {
       L.marker(ev.latlng).addTo(this.mymap)
         .bindPopup('<img src="/assets/spot.jpg" style="width:300px;display:inline-block;margin:5px 0 2px 5px"/>');
     });
-
-    this.mymap.locate();
 
     this.mymap.on('locationfound', (ev) => {
       this.mymap.setView(ev.latlng, 17);
@@ -47,5 +45,9 @@ export class MapComponent implements OnInit {
     this.mymap.on('locationerror', (ev) => {
       alert(ev.message);
     });
+  }
+
+  locateMe() {
+    this.mymap.locate();
   }
 }
