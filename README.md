@@ -1,3 +1,3 @@
 # Spotground
 
-[Demo](http://spotground.com/)
+[Demo](https://spotground.com/)
