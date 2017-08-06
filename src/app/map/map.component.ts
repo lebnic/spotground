@@ -15,8 +15,8 @@ export class MapComponent implements OnInit {
   ngOnInit() {
     this.mymap = L.map("map", { zoomControl: false, dragging: true }).setView([46, -71], 6);
     new L.TileLayer(
-      'http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png',
-      { attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>' }
+      'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+      { attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy;' }
     ).addTo(this.mymap);
 
 
