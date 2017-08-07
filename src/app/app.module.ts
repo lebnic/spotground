@@ -1,3 +1,6 @@
+import { firebaseConfig } from './../environments/firebase.config';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -21,7 +24,9 @@ import { MapComponent } from './map/map.component';
     HttpModule,
     BrowserAnimationsModule,
     Angulartics2Module.forRoot([Angulartics2GoogleAnalytics]),
-    RouterModule.forRoot([])
+    RouterModule.forRoot([]),
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule
   ],
   providers: [
     Angulartics2GoogleAnalytics,

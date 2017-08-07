@@ -1,6 +1,6 @@
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { Component } from '@angular/core';
 import { Angulartics2, Angulartics2GoogleAnalytics } from 'angulartics2';
-
 
 @Component({
   selector: 'app-root',
@@ -8,10 +8,13 @@ import { Angulartics2, Angulartics2GoogleAnalytics } from 'angulartics2';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = "Welcome, here's a map";
-  
+  spots: FirebaseListObservable<any[]>;
+
   constructor(
-    public angulartics2: Angulartics2,
-    public angulartics2GoogleAnalytics: Angulartics2GoogleAnalytics
-  ) { }
+    db: AngularFireDatabase,
+    angulartics2: Angulartics2,
+    angulartics2GoogleAnalytics: Angulartics2GoogleAnalytics
+  ) {
+    this.spots = db.list('/spots');
+  }
 }

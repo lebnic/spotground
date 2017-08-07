@@ -45,6 +45,8 @@ export class MapComponent implements OnInit {
     this.mymap.on('locationerror', (ev) => {
       alert(ev.message);
     });
+
+    this.locateMe();
   }
 
   locateMe() {
