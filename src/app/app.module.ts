@@ -6,12 +6,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { AngularFireAuth } from 'angularfire2/auth';
 
 import { RouterModule } from '@angular/router'
 import { Angulartics2Module, Angulartics2GoogleAnalytics } from 'angulartics2';
 
 import { AppComponent } from './app.component';
 import { MapComponent } from './map/map.component';
+import { AuthService } from './providers/auth.service';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import { MapComponent } from './map/map.component';
   ],
   providers: [
     Angulartics2GoogleAnalytics,
+    AuthService,
+    AngularFireAuth
   ],
   bootstrap: [AppComponent]
 })
